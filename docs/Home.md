@@ -30,6 +30,7 @@ Browse the Jenkins issue tracker to see any [open issues](https://issues.jenkins
  * Added support for the
    [Matrix Combinations Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Matrix+Combinations+Plugin)
  * Added support for the [Managed Scripts Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Managed+Script+Plugin)
+ * Added support for the [Console Column Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Console+Column+Plugin) ([JENKINS-29509](https://issues.jenkins-ci.org/browse/JENKINS-29509))
  * Enhanced support for the [GitHub Plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin)
    ([JENKINS-29849](https://issues.jenkins-ci.org/browse/JENKINS-29849))
  * Enhanced support for [Maven Project Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Maven+Project+Plugin)

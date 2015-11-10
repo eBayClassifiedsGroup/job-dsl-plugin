@@ -292,6 +292,94 @@ class ListViewSpec extends Specification {
         1 * jobManagement.requireMinimumPluginVersion('robot', '1.6.0')
     }
 
+    // - begin: all the Console Columns
+
+    def 'lastConsole column'() {
+        when:
+        view.columns {
+            lastConsole()
+        }
+
+        then:
+        Node root = view.node
+        root.columns.size() == 1
+        root.columns[0].value().size() == 1
+        root.columns[0].value()[0].name() == 'org.jenkins.ci.plugins.column.console.LastBuildColumn'
+        1 * jobManagement.requireMinimumPluginVersion('console-column-plugin', '1.5')
+    }
+
+    def 'lastFailedConsole column'() {
+        when:
+        view.columns {
+            lastFailedConsole()
+        }
+
+        then:
+        Node root = view.node
+        root.columns.size() == 1
+        root.columns[0].value().size() == 1
+        root.columns[0].value()[0].name() == 'org.jenkins.ci.plugins.column.console.LastFailedBuildColumn'
+        1 * jobManagement.requireMinimumPluginVersion('console-column-plugin', '1.5')
+    }
+
+    def 'lastStableConsole column'() {
+        when:
+        view.columns {
+            lastStableConsole()
+        }
+
+        then:
+        Node root = view.node
+        root.columns.size() == 1
+        root.columns[0].value().size() == 1
+        root.columns[0].value()[0].name() == 'org.jenkins.ci.plugins.column.console.LastStableBuildColumn'
+        1 * jobManagement.requireMinimumPluginVersion('console-column-plugin', '1.5')
+    }
+
+    def 'lastSuccessfulConsole column'() {
+        when:
+        view.columns {
+            lastSuccessfulConsole()
+        }
+
+        then:
+        Node root = view.node
+        root.columns.size() == 1
+        root.columns[0].value().size() == 1
+        root.columns[0].value()[0].name() == 'org.jenkins.ci.plugins.column.console.LastSuccessfulBuildColumn'
+        1 * jobManagement.requireMinimumPluginVersion('console-column-plugin', '1.5')
+    }
+
+    def 'lastUnstableConsole column'() {
+        when:
+        view.columns {
+            lastUnstableConsole()
+        }
+
+        then:
+        Node root = view.node
+        root.columns.size() == 1
+        root.columns[0].value().size() == 1
+        root.columns[0].value()[0].name() == 'org.jenkins.ci.plugins.column.console.LastUnstableBuildColumn'
+        1 * jobManagement.requireMinimumPluginVersion('console-column-plugin', '1.5')
+    }
+
+    def 'lastUnsuccessfulConsole column'() {
+        when:
+        view.columns {
+            lastUnsuccessfulConsole()
+        }
+
+        then:
+        Node root = view.node
+        root.columns.size() == 1
+        root.columns[0].value().size() == 1
+        root.columns[0].value()[0].name() == 'org.jenkins.ci.plugins.column.console.LastUnsuccessfulBuildColumn'
+        1 * jobManagement.requireMinimumPluginVersion('console-column-plugin', '1.5')
+    }
+
+    // - end: all the Console Columns
+
     def 'statusFilter'(Closure filter, Map children) {
         when:
         view.jobFilters(filter)

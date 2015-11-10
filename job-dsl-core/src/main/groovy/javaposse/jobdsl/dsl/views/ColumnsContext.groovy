@@ -119,6 +119,70 @@ class ColumnsContext extends AbstractContext {
         columnNodes << new Node(null, 'hudson.plugins.robot.view.RobotListViewColumn')
     }
 
+    // - begin: all the Console Columns
+
+    /**
+     * Adds a column showing a button to access the Console of the last build.
+     *
+     * @since 1.40
+     */
+    @RequiresPlugin(id = 'console-column-plugin', minimumVersion = '1.5')
+    void lastConsole() {
+      columnNodes << new Node(null, 'org.jenkins.ci.plugins.column.console.LastBuildColumn')
+    }
+
+    /**
+     * Adds a column showing a button to access the Console of the last failed build.
+     *
+     * @since 1.40
+     */
+    @RequiresPlugin(id = 'console-column-plugin', minimumVersion = '1.5')
+    void lastFailedConsole() {
+      columnNodes << new Node(null, 'org.jenkins.ci.plugins.column.console.LastFailedBuildColumn')
+    }
+
+    /**
+     * Adds a column showing a button to access the Console of the last stable build.
+     *
+     * @since 1.40
+     */
+    @RequiresPlugin(id = 'console-column-plugin', minimumVersion = '1.5')
+    void lastStableConsole() {
+      columnNodes << new Node(null, 'org.jenkins.ci.plugins.column.console.LastStableBuildColumn')
+    }
+
+    /**
+     * Adds a column showing a button to access the Console of the last successful build.
+     *
+     * @since 1.40
+     */
+    @RequiresPlugin(id = 'console-column-plugin', minimumVersion = '1.5')
+    void lastSuccessfulConsole() {
+      columnNodes << new Node(null, 'org.jenkins.ci.plugins.column.console.LastSuccessfulBuildColumn')
+    }
+
+    /**
+     * Adds a column showing a button to access the Console of the last unstable build.
+     *
+     * @since 1.40
+     */
+    @RequiresPlugin(id = 'console-column-plugin', minimumVersion = '1.5')
+    void lastUnstableConsole() {
+      columnNodes << new Node(null, 'org.jenkins.ci.plugins.column.console.LastUnstableBuildColumn')
+    }
+
+    /**
+     * Adds a column showing a button to access the Console of the last unsuccessfulbuild.
+     *
+     * @since 1.40
+     */
+    @RequiresPlugin(id = 'console-column-plugin', minimumVersion = '1.5')
+    void lastUnsuccessfulConsole() {
+      columnNodes << new Node(null, 'org.jenkins.ci.plugins.column.console.LastUnsuccessfulBuildColumn')
+    }
+
+    // - end: all the Console Columns
+
     /**
      * Adds a column showing a custom icon.
      *
